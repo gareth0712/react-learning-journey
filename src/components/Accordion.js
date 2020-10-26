@@ -3,7 +3,7 @@ import React from 'react';
 const Accordion = ({ items }) => {
   const renderedItems = items.map((item) => {
     return (
-      <div key={item.title}>
+      <React.Fragment>
         <div className="title active">
           <i className="dropdown icon"></i>
           {item.title}
@@ -13,7 +13,7 @@ const Accordion = ({ items }) => {
             <p>{item.content}</p>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   });
 
