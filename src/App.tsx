@@ -1,23 +1,26 @@
+import { FC } from "react";
 import { Route } from "react-router-dom";
-import "./App.css";
+import MainHeader from "./components/MainHeader";
 // These are still regular React components
 // They serve specific route purpose as pages and thus can be saved in a separate pages directory
 // This is just a recommended practice, not required by React-router-dom library
-import Product from "./pages/Product";
+import Products from "./pages/Products";
 import Welcome from "./pages/Welcome";
 
-function App() {
+import "./App.css";
+
+const App: FC = (): JSX.Element => {
   return (
     <div>
-      <h2>Nav Bar</h2>
+      <MainHeader />
       <Route path="/welcome">
         <Welcome />
       </Route>
-      <Route path="/product">
-        <Product />
+      <Route path="/products">
+        <Products />
       </Route>
     </div>
   );
-}
+};
 
 export default App;
