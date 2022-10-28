@@ -9,6 +9,11 @@ const MainHeader: FC = (): JSX.Element => {
       <nav>
         <ul>
           <li>
+            <NavLink activeClassName={classes.active} to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
             <NavLink activeClassName={classes.active} to="/welcome">
               Welcome
             </NavLink>
