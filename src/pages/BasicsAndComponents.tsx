@@ -1,8 +1,8 @@
 import { FC } from "react";
-import ExpenseItem from "../components/BasicsAndComponents/ExpenseItem";
+import Expenses from "../components/BasicsAndComponents/Expenses";
 
 const BasicsAndComponents: FC = (): JSX.Element => {
-  const expenses = [
+  const expenses: Expense[] = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -29,22 +29,13 @@ const BasicsAndComponents: FC = (): JSX.Element => {
     },
   ];
 
-  const expenseItems = expenses.map((expense) => (
-    // In react, Lower case are built-in html elements whereas custom React components must be in upper case to tell React that this is a React component
-    <ExpenseItem
-      key={expense.id}
-      title={expense.title}
-      date={expense.date}
-      amount={expense.amount}
-    />
-  ));
   // A React component consists of HTML, JS, and CSS
   // For each return statement / JSX code snippets, there must be only one root element
   // What is JSX: Javascript XML, mostly mean that Javascript and HTML (HTML in the end is XML) combine together, just like the code below
   return (
     <>
       <h1>The BasicsAndComponents page</h1>
-      {expenseItems}
+      <Expenses expenses={expenses} />
     </>
   );
 };
